@@ -1,0 +1,16 @@
+<div class="dialog">
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input name="title" [(ngModel)]="title" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Description</mat-label>
+            <input name="title" [(ngModel)]="description" matInput>
+        </mat-form-field>
+
+    </form>
+
+    <button mat-button color="primary" style="border: 1px solid;" (click)="createCard()">Create Card</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="list-container">
+    <div class="cross-btn">
+        <fa-icon [icon]="faClose" (click)="deleteList()">Add List</fa-icon>
+    </div>
+
+    <div class="list" (dragover)="allowDrop($event)" (drop)="drop($event)">
+        <p class="list__title"><strong>{{list.name}}</strong></p>
+        <div class="cards">
+            <app-card *ngFor="let card of list.cards" [card]="card" [listId]="list.id"></app-card>
+        </div>
+
+        <fa-icon [icon]="faPlus" (click)="addCard()">Add Card</fa-icon>
+
+    </div>
+</div>
