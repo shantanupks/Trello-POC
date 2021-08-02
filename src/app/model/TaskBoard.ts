@@ -5,6 +5,16 @@ export class TaskBoard {
     lastListId = -1;
     lastCardId = 1;
 
+    constructor() {
+        let taskBoardData = localStorage.getItem('boardData')
+        if (taskBoardData) {
+            let parsed: TaskBoard = JSON.parse(taskBoardData);
+            this.lists = parsed.lists;
+            this.lastListId = parsed.lastListId;
+            this.lastCardId = parsed.lastCardId;
+        }
+    }
+
     createList(title) {
         let list: IList = {
             id: String(++this.lastListId),

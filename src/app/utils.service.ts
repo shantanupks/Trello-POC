@@ -19,6 +19,7 @@ export class UtilsService {
   }
 
   updateBoard() {
+    localStorage.setItem('boardData', JSON.stringify(this.taskBoard));
     this.boardSubject.next();
   }
 

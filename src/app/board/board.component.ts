@@ -17,6 +17,7 @@ export class BoardComponent implements OnInit {
 
   createBoard(): void {
     this.taskBoard = new TaskBoard();
+    this.lists = this.taskBoard.lists;
     this.utils.setBoard(this.taskBoard);
   }
 
@@ -28,6 +29,7 @@ export class BoardComponent implements OnInit {
   subscribeToLists() {
     this.utils.boardSubject.subscribe((x) => {
       this.lists = this.taskBoard.lists;
+      console.log(this.lists);
     });
   }
 
